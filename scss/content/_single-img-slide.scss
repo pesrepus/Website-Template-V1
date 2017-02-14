@@ -1,0 +1,56 @@
+// ------------------------------------------------------------------------
+// --- Content: Single Image Slide ---
+// ------------------------------------------------------------------------
+
+// ---------------
+// Small up
+
+.single-img-slide {
+    padding-bottom: $section-gutter-small;
+    
+    .content-wrapper {
+        .row.column {
+            padding: 0;
+        }
+    }
+}
+
+// ---------------
+// Medium up
+
+@include breakpoint(medium) {
+    .single-img-slide {
+        padding-bottom: $section-gutter-medium;
+
+        .back-wrapper {
+            padding-bottom: $padding-vertical-medium * 2;
+        }
+
+        .content-wrapper {
+            margin-top: -$padding-vertical-medium;
+            
+            .row.column {
+                padding: 0 (rem-calc(map-get($grid-column-gutter, medium)) / 2);
+                
+                img {
+                    border-radius: $base-border-radius;
+                }
+            }
+        }
+    }
+}
+
+// ---------------
+// Large up
+
+@include breakpoint(large) {
+    .single-img-slide {
+        .back-wrapper {
+            padding-bottom: $padding-vertical-large * 2;
+        }
+
+        .content-wrapper {
+            margin-top: -$padding-vertical-large;
+        }
+    }
+}

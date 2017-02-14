@@ -1,0 +1,108 @@
+// ------------------------------------------------------------------------
+// --- Content: Pricing Tables ---
+// ------------------------------------------------------------------------
+
+// ---------------
+// Small up
+
+.pricing-tables {
+    padding-bottom: $section-gutter-small - rem-calc(40);
+    
+    .content-wrapper {
+        position: relative;
+        
+        &:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            display: block;
+            height: rem-calc(300);
+            background: $primary-color;
+        }
+        
+        .row {
+            .columns {
+                .card {
+                    position: relative;
+                    background: #fff;
+                    border-bottom: 1px solid #ddd;
+                    padding: rem-calc(40);
+                    margin-bottom: rem-calc(40);
+                    border-radius: $base-border-radius;
+                    
+                    .title {
+                        padding-bottom: rem-calc(30);
+                        
+                        h6 {
+                            line-height: 1;
+                            color: $primary-color;
+                            margin-bottom: rem-calc(5);
+                        }
+                        
+                        h4 {
+                            line-height: 1;
+                        }
+                    }
+                    
+                    .list {
+                        padding: rem-calc(30 0);
+                        border-top: 1px solid $base-border-color;
+                        
+                        h6 {
+                            line-height: 1;
+                            color: $primary-color;
+                            margin-top: rem-calc(20);
+                            
+                            &:first-child {
+                                margin-top: 0;
+                            }
+                        }
+                        
+                        ul {
+                            margin-top: rem-calc(10);
+                        }
+                    }
+                    
+                    .price {
+                        padding-top: rem-calc(30);
+                        border-top: 1px solid $base-border-color;
+                        display: table;
+                        width: 100%;
+                        vertical-align: bottom;
+                        
+                        .price-label {
+                            letter-spacing: rem-calc(3);
+                            text-transform: uppercase;
+                            font-size: rem-calc(10);
+                            display: table-cell;
+                            width: 50%;
+                        }
+                        
+                        .price-amount {
+                            font-size: rem-calc(22);
+                            color: #333;
+                            display: table-cell;
+                            width: 50%;
+                            text-align: right;
+                        }
+                    }
+                    
+                    .button {
+                        margin: rem-calc(30 0 0 0);;
+                    }
+                }
+            }
+        }
+    }
+}
+
+// ---------------
+// Medium up
+
+@include breakpoint(medium) {
+    .pricing-tables {
+        padding-bottom: $section-gutter-medium - rem-calc(40);
+    }
+}

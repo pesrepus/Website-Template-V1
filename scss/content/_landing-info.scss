@@ -1,0 +1,100 @@
+// ------------------------------------------------------------------------
+// --- Content: Landing Info ---
+// ------------------------------------------------------------------------
+
+// ---------------
+// Small up
+
+.landing-info {
+    overflow: hidden;
+    
+    .row {
+        .columns {
+            .back-wrapper {
+                position: relative;
+                
+                &:before {
+                    content: '';
+                    position: absolute;
+                    display: block;
+                    width: 200%;
+                    left: -50%;
+                    top: 0;
+                    bottom: 0;
+                    background: #fff;
+                }
+
+                h1, h2, h3 {
+                    position: relative;
+                }
+                
+                p {
+                    position: relative;
+                    text-align: justify;
+                }
+            }
+        }
+    }
+}
+
+// ---------------
+// Medium up
+
+@include breakpoint(medium) {
+    .landing-info {
+        position: relative;
+        
+        .row {
+            .columns {
+                .back-wrapper {
+                    padding-right: rem-calc(50);
+                    position: static;
+                    
+                    &:before {
+                        width: 50%;
+                        left: 0;
+                        top: 0;
+                        bottom: 0;
+                    }
+                    
+                    h1, h2, h3 {
+                        display: table-cell;
+                        vertical-align: bottom;
+                        height: rem-calc(map-get(map-get($header-sizes, medium), h1));
+                        line-height: 1;
+                    }
+                }
+
+                .back-wrapper-blank {
+                    padding-left: rem-calc(50) - rem-calc(map-get($grid-column-gutter, medium));
+                    
+                    h4, h5, h6 {
+                        display: table-cell;
+                        vertical-align: bottom;
+                        height: rem-calc(map-get(map-get($header-sizes, medium), h1));
+                        line-height: 1;
+                    }
+                }
+            }
+        }
+    }
+}
+
+// ---------------
+// Large up
+
+@include breakpoint(large) {
+    .landing-info {
+        .row {
+            .columns {
+                .back-wrapper {
+                    padding-right: rem-calc(60);
+                }
+
+                .back-wrapper-blank {
+                    padding-left: rem-calc(60) - rem-calc(map-get($grid-column-gutter, medium));
+                }
+            }
+        }
+    }
+}

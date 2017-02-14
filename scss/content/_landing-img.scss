@@ -1,0 +1,49 @@
+// ------------------------------------------------------------------------
+// --- Content: Landing Info ---
+// ------------------------------------------------------------------------
+
+// ---------------
+// Small up
+
+.landing-img {
+    .img-holder {
+        background-size: cover;
+        background-position: center center;
+        height: 40vh;
+        min-height: rem-calc(250);
+    }
+}
+
+// ---------------
+// Medium up
+
+@include breakpoint(medium) {
+    .landing-img {
+        .img-holder {
+            height: 60vh;
+            min-height: rem-calc(300);
+        }
+    }
+}
+
+// ---------------
+// Large up
+
+@include breakpoint(large) {
+    .landing-img {
+        .img-holder {
+            min-height: rem-calc(400);
+        }
+    }
+}
+
+// ---------------
+// xLarge up
+
+@include breakpoint(xlarge) {
+    .landing-img {
+        .img-holder {
+            min-height: rem-calc(500);
+        }
+    }
+}

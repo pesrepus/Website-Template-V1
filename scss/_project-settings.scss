@@ -1,0 +1,78 @@
+// moved from _settings.scss
+@import 'util/util';
+
+// Colors
+// ----------------------------
+
+$primary-color: #97bf49;
+
+$bg-gray-dark: #222;
+$bg-gray-light: #eee;
+
+$text-gray-dark: #333;
+$text-gray-medium: #888;
+$text-gray-light: #aaa;
+
+// Base Styles
+// ----------------------------
+
+$body-bg: $bg-gray-light;
+$base-text-color: $text-gray-medium;
+$base-border-color: $bg-gray-light;
+$base-border-radius: 0;
+
+// Typography
+// ----------------------------
+
+$base-font-family: 'Source Sans Pro', Roboto, Arial, sans-serif;
+$head-font-family: 'Playfair Display', serif;
+
+// Top Bar - Quick Info
+// ----------------------------
+
+$tb-quick-info-height: rem-calc(55);
+
+$tb-quick-info-bg: $bg-gray-dark;
+$tb-quick-info-color: $text-gray-medium;
+$tb-quick-info-color-hover: $primary-color;
+
+// Top Bar - Navigation
+// ----------------------------
+
+$tb-nav-bg: #fff;
+$tb-nav-height: rem-calc(100);
+// don't go under 40 at scroll-height!
+// change scrollto offset in JS too
+$tb-nav-height-scroll: rem-calc(70);
+$tb-nav-logo-height: rem-calc(60);
+$tb-nav-logo-height-scroll: rem-calc(50);
+
+$tb-nav-title-color: $text-gray-dark;
+$tb-nav-menu-color: $text-gray-medium;
+$tb-nav-menu-color-hover: $primary-color;
+
+// Footer
+// ----------------------------
+
+$footer-bg: $bg-gray-dark;
+$footer-title-color: #fff;
+$footer-color: $text-gray-medium;
+$footer-color-hover: $primary-color;
+
+$footer-title-area-height: rem-calc(220);
+$footer-logo-height: $tb-nav-logo-height;
+
+$footer-bottom-padding: rem-calc(30);
+
+// Content Overall
+// ----------------------------
+
+$padding-vertical-small: rem-calc(40);
+$padding-vertical-medium: rem-calc(60);
+$padding-vertical-large: rem-calc(80);
+
+$section-gutter-small: rem-calc(60);
+$section-gutter-medium: rem-calc(120);
+
+
+// more basic template styling in _styles.scss

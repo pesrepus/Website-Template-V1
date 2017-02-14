@@ -1,0 +1,66 @@
+// ------------------------------------------------------------------------
+// --- Content: Multiple Images ---
+// ------------------------------------------------------------------------
+
+// ---------------
+// Small up
+
+.multiple-img {
+    padding-bottom: $section-gutter-small;
+    
+    .content-wrapper {
+        .row .columns {
+            padding: 0;
+            margin-bottom: rem-calc(10);
+            
+            &:last-child {
+                margin-bottom: 0;
+            }
+            
+            img {
+                width: 100%;
+            }
+        }
+    }
+}
+
+// ---------------
+// Medium up
+
+@include breakpoint(medium) {
+    .multiple-img {
+        padding-bottom: $section-gutter-medium;
+
+        .back-wrapper {
+            padding-bottom: $padding-vertical-medium * 2;
+        }
+
+        .content-wrapper {
+            margin-top: -$padding-vertical-medium;
+            
+            .row .columns {
+                padding: 0 (rem-calc(map-get($grid-column-gutter, medium)) / 2);
+                margin-bottom: 0;
+                
+                img {
+                    border-radius: $base-border-radius;
+                }
+            }
+        }
+    }
+}
+
+// ---------------
+// Large up
+
+@include breakpoint(large) {
+    .multiple-img {
+        .back-wrapper {
+            padding-bottom: $padding-vertical-large * 2;
+        }
+
+        .content-wrapper {
+            margin-top: -$padding-vertical-large;
+        }
+    }
+}

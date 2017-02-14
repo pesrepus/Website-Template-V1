@@ -1,0 +1,170 @@
+// ------------------------------------------------------------------------
+// --- Global Adjustments ---
+// ------------------------------------------------------------------------
+
+// default browser font size: 16px
+$browser-context: 16;
+
+@function em-calc($pixels, $context: $browser-context) {
+    @return #{$pixels/$context}em;
+}
+
+// make the grid jumping the queries for better styling
+
+@include breakpoint(medium) {
+    .row {
+        max-width: em-calc(720);
+    }
+}
+
+@include breakpoint(large) {
+    .row {
+        max-width: em-calc(940);
+    }
+}
+
+@include breakpoint(xlarge) {
+    .row {
+        max-width: em-calc(1140);
+    }
+}
+
+h1, h2, h3 {
+    margin: 0;
+}
+
+h4, h5, h6 {
+    margin: 0;
+    font-family: $base-font-family;
+    font-style: normal;
+    letter-spacing: rem-calc(3);
+    text-transform: uppercase;
+}
+
+p {
+    margin: rem-calc(30 0 0 0);
+    font-size: rem-calc(14);
+    line-height: rem-calc(30);
+}
+
+ul.content-list {
+    margin: rem-calc(30 0 0 0);
+    list-style: none;
+    
+    li {
+        font-size: rem-calc(14);
+        line-height: rem-calc(30);
+        position: relative;
+        padding: rem-calc(0 0 0 26);
+        
+        &:before {
+            content: '';
+            position: absolute;
+            display: block;
+            left: 0;
+            top: rem-calc(15);
+            width: rem-calc(10);
+            height: 1px;
+            background: $primary-color;
+        }
+    }
+}
+
+.button {
+    text-transform: uppercase;
+    letter-spacing: rem-calc(2);
+    font-size: rem-calc(12);
+    border-width: 2px;
+    border-radius: $base-border-radius;
+    
+    &:hover {
+        border-color: $primary-color;
+        background-color: $primary-color;
+        color: #fff;
+    }
+}
+
+.remodal {
+    border-radius: $base-border-radius;
+}
+
+// ------------------------------------------------------------------------
+// --- Content Overall ---
+// ------------------------------------------------------------------------
+
+// ---------------
+// Small up
+
+.back-wrapper {
+    padding: $padding-vertical-small 0;
+    background-color: #fff;
+}
+
+.back-wrapper-colored {
+    background-color: $primary-color;
+    
+    h1, h2, h3, h4, h5, h6 {
+        color: #fff;
+    }
+
+    p {
+        color: #fff;
+    }
+}
+
+.back-wrapper-blank {
+    padding: $padding-vertical-small 0;
+}
+
+.bw-title {
+    text-align: center;
+}
+
+// ---------------
+// Medium up
+
+@include breakpoint(medium) {
+    .back-wrapper {
+        padding: $padding-vertical-medium 0;
+    }
+
+    .back-wrapper-blank {
+        padding: $padding-vertical-medium 0;
+    }
+    
+    .bw-title {
+        .row.column {
+            padding: rem-calc(0 100);
+        }
+    }
+}
+
+// ---------------
+// Large up
+
+@include breakpoint(large) {
+    .back-wrapper {
+        padding: $padding-vertical-large 0;
+    }
+
+    .back-wrapper-blank {
+        padding: $padding-vertical-large 0;
+    }
+    
+    .bw-title {
+        .row.column {
+            padding: rem-calc(0 150);
+        }
+    }
+}
+
+// ---------------
+// xLarge up
+
+@include breakpoint(xlarge) {
+    .bw-title {
+        .row.column {
+            padding: rem-calc(0 200);
+        }
+    }
+}

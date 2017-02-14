@@ -1,0 +1,22 @@
+{
+  "name": "paper-diamond-onepage-template",
+  "version": "1.0.0",
+  "authors": "Paper Diamond",
+  "description": "Template for a new Static OnePage Project",
+  "main": "index.html",
+  "license": "MIT",
+  "homepage": "http://paper-diamond.at",
+  "dependencies": {
+    "foundation-sites": "~6.2.3",
+    "scrollreveal": "~3.3.1",
+    "maplace-js": "^0.2.7"
+  },
+  "ignore": [
+    "node_modules",
+    "bower_components"
+  ],
+  "private": true,
+  "resolutions": {
+    "jquery": "~2.2.0"
+  }
+}

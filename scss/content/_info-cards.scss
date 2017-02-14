@@ -1,0 +1,133 @@
+// ------------------------------------------------------------------------
+// --- Content: Info Cards ---
+// ------------------------------------------------------------------------
+
+// ---------------
+// Small up
+
+.info-cards {
+    padding-bottom: $section-gutter-small;
+    overflow: hidden;
+    
+    .back-wrapper {
+        padding-bottom: $padding-vertical-small + rem-calc(180);
+    }
+    
+    .content-wrapper {
+        margin-top: rem-calc(-180);
+        
+        .row {
+            .columns {
+                .card {
+                    background: #fff;
+                    border-bottom: 1px solid #ddd;
+                    margin-bottom: map-get($grid-column-gutter, small) / 2;
+                    border-radius: $base-border-radius;
+
+                    .card-img {
+                        background-position: center center;
+                        background-size: cover;
+                        position: relative;
+                        height: rem-calc(180);
+                        border-radius: $base-border-radius $base-border-radius 0 0;
+                    }
+
+                    .card-text {
+                        padding: rem-calc(35);
+
+                        p {
+                            margin-top: rem-calc(20);
+                            line-height: rem-calc(24);
+                            text-align: justify;
+                        }
+                    }
+                }
+                
+                &:last-child {
+                    .card {
+                        margin: 0;
+                    }
+                }
+            }
+        }
+    }
+}
+
+// ---------------
+// Medium up
+
+@include breakpoint(medium) {
+    .info-cards {
+        padding-bottom: $section-gutter-medium;
+        
+        .back-wrapper {
+            padding-bottom: $padding-vertical-medium + rem-calc(130);
+        }
+        
+        .content-wrapper {
+            margin-top: rem-calc(-130);
+            
+            .row {
+                .columns {
+                    .card {
+                        margin: 0;
+                        
+                        .card-img {
+                            height: rem-calc(130);
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+// ---------------
+// Large up
+
+@include breakpoint(large) {
+    .info-cards {
+        .back-wrapper {
+            padding-bottom: $padding-vertical-large + rem-calc(170);
+        }
+        
+        .content-wrapper {
+            margin-top: rem-calc(-170);
+            
+            .row {
+                .columns {
+                    .card {
+                        .card-img {
+                            height: rem-calc(170);
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+// ---------------
+// xLarge up
+
+@include breakpoint(xlarge) {
+    .info-cards {
+        .back-wrapper {
+            padding-bottom: $padding-vertical-large + rem-calc(220);
+        }
+        
+        .content-wrapper {
+            margin-top: rem-calc(-220);
+            
+            .row {
+                .columns {
+                    .card {
+                        .card-img {
+                            height: rem-calc(220);
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

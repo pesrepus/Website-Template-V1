@@ -1,0 +1,108 @@
+// ------------------------------------------------------------------------
+// --- Content: Contact ---
+// ------------------------------------------------------------------------
+
+// ---------------
+// Small up
+
+.contact {
+    position: relative;
+    
+    .back-wrapper {
+        padding: rem-calc(60);
+
+        h1 {
+            margin-bottom: rem-calc(40);
+        }
+
+        .location {
+            color: #333;
+            font-weight: bold;
+            font-size: rem-calc(18);
+
+            span {
+                color: #bbb;
+                margin-left: rem-calc(20);
+            }
+        }
+
+        .location-full {
+            text-transform: uppercase;
+            letter-spacing: rem-calc(2);
+            font-size: rem-calc(12);
+        }
+
+        table {
+            margin: rem-calc(30 0 0 0);
+            width: auto;
+
+            tr {
+                th {
+                    padding: rem-calc(5 60 5 0);
+                    text-align: left;
+                    font-weight: normal;
+                    text-transform: uppercase;
+                    letter-spacing: rem-calc(2);
+                    font-size: rem-calc(12);
+                }
+
+                td {
+                    padding: rem-calc(5 0);
+                    text-align: left;
+                    font-size: rem-calc(14);
+                }
+            }
+        }
+    }
+
+    .contact-map {
+        height: rem-calc(400);
+        height: 50vh;
+        max-height: rem-calc(400);
+
+        #contact-map {
+            height: 100%;
+        }
+    }
+}
+
+// ---------------
+// Medium up
+
+@include breakpoint(medium) {
+    .contact {
+        .back-wrapper {
+            h1 {
+                margin-bottom: rem-calc(60);
+            }
+            
+            .location {
+                font-size: rem-calc(24);
+            }
+        }
+    }
+}
+
+// ---------------
+// Large up
+
+@include breakpoint(large) {
+    .contact {
+        .back-wrapper {
+            margin-left: 50%;
+        }
+        
+        .contact-map {
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 100%;
+            width: 50%;
+            max-height: none;
+
+            #contact-map {
+                height: 100%;
+            }
+        }
+    }
+}

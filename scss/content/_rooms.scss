@@ -1,0 +1,244 @@
+// ------------------------------------------------------------------------
+// --- Content: Rooms ---
+// ------------------------------------------------------------------------
+
+// ---------------
+// Small up
+
+.rooms {
+    padding-bottom: $section-gutter-small;
+    
+    .back-wrapper {
+        padding-bottom: $padding-vertical-small;
+        
+        .room-list {
+            margin-top: rem-calc(30);
+            
+            ul {
+                list-style: none;
+                margin: 0;
+                border: 1px solid $base-border-color;
+                border-radius: $base-border-radius;
+                
+                li {
+                    a {
+                        display: block;
+                        padding: rem-calc(15 20);
+                        color: #aaa;
+                        border-radius: $base-border-radius;
+                        transition: color 0.2s ease, background-color 0.2s ease;
+                        
+                        .room-name {
+                            float: left;
+                        }
+
+                        .room-price {
+                            float: right;
+                            
+                            span {
+                                text-transform: uppercase;
+                                font-size: rem-calc(11);
+                                margin-right: rem-calc(10);
+                                letter-spacing: rem-calc(1);
+                            }
+                        }
+                        
+                        &:hover {
+                            color: #333;
+                        }
+                        
+                        &.active {
+                            color: #fff;
+                            background-color: $primary-color;
+                        }
+                        
+                        &:after {
+                            content: '';
+                            display: table;
+                            clear: both;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    
+    .content-wrapper {
+        @extend .row;
+        padding: 0;
+        
+        .room-img-container {            
+            .room-img {
+                background-size: cover;
+                background-position: center center;
+
+                &:after {
+                    content: '';
+                    display: block;
+                    padding-top: 50%;
+                }
+            }
+        }
+        
+        .overlay {
+            display: none;
+        }
+    }
+}
+
+// ---------------
+// Medium up
+
+@include breakpoint(medium) {
+    .rooms {
+        padding-bottom: $section-gutter-medium;
+
+        .back-wrapper {
+            padding-bottom: $padding-vertical-medium * 2;
+        }
+
+        .content-wrapper {
+            margin-top: -$padding-vertical-medium;
+            padding: 0 rem-calc((map-get($grid-column-gutter, medium) / 2));
+            position: relative;
+            
+            .room-item-container {
+                .room-img-container {
+                    border-radius: $base-border-radius;
+                    overflow: hidden;
+                    // fix border radius fail on transition
+                    position: relative;
+                    z-index: 20;
+                    
+                    .room-img {
+                        transition: all 1.5s $easeOutExpo;
+                        // fix border radius fail on transition
+                        position: relative;
+                        z-index: 10;
+                    }
+                }
+
+                .overlay {
+                    position: absolute;
+                    z-index: 30;
+                    top: 0;
+                    left: 0;
+                    height: 100%;
+                    width: 100%;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+
+                    .info-container {
+                        background: #fff;
+                        text-align: center;
+                        padding: rem-calc(40 50);
+                        box-shadow: 0 1px 10px rgba(0,0,0,0.5);
+                        transform: scale(0.92);
+                        opacity: 0;
+                        border-radius: $base-border-radius;
+                        transition: all 1.5s $easeOutExpo;
+
+                        a {
+                            margin: rem-calc(15 0 0 0);
+                        }
+                    }
+                }
+
+                &:hover {
+                    .room-img {
+                        transform: scale(1.02);
+                    }
+
+                    .overlay {
+                        .info-container {
+                            opacity: 1;
+                            transform: scale(1);
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+// ---------------
+// Large only
+
+@include breakpoint(large only) {
+    .rooms {
+        .back-wrapper {
+            .rooms-text-row {
+                .columns:first-child {
+                    padding-right: rem-calc(30);
+                }
+                
+                .columns:last-child {
+                    padding-left: rem-calc(30);
+                }
+            }
+            
+            .room-list {
+                margin-top: 0;
+            }
+        }
+    }
+}
+
+// ---------------
+// xLarge up
+
+@include breakpoint(xlarge) {
+    .rooms {
+        position: relative;
+
+        .back-wrapper {
+            .rooms-text-row {
+                .columns {
+                    padding-right: rem-calc(60);
+                }
+            }
+
+            .room-list {
+                margin-top: rem-calc(30);
+            }
+        }
+
+        .content-wrapper {
+            margin: 0;
+            padding: 0;
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: $section-gutter-medium;
+            width: 50%;
+            
+            .owl-carousel,
+            .owl-wrapper-outer,
+            .owl-wrapper,
+            .owl-item {
+                height: 100%;
+            }
+            
+            .room-item-container {
+                .room-img-container {
+                    position: absolute;
+                    top: 0;
+                    bottom: 0;
+                    left: 0;
+                    right: 0;
+                    overflow: hidden;
+                    border-radius: 0;
+
+                    .room-img {
+                        height: 100%;
+
+                        &:after {
+                            display: none;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

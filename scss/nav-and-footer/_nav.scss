@@ -1,0 +1,344 @@
+// ------------------------------------------------------------------------
+// --- Quick Info ---
+// ------------------------------------------------------------------------
+
+// ---------------
+// Small up
+
+.quick-info {
+    background-color: $tb-quick-info-bg;
+    
+    .quick-info-left {
+        ul {
+            list-style: none;
+            line-height: 1;
+            text-align: center;
+            margin: (($tb-quick-info-height - rem-calc(25)) / 2) 0;
+            
+            li {
+                display: inline-block;
+                color: $tb-quick-info-color;
+                font-size: rem-calc(14);
+                margin: rem-calc(0 15);
+                line-height: rem-calc(25);
+                
+                i {
+                    margin: rem-calc(0 15 0 0);
+                }
+            }
+        }
+    }
+    
+    .quick-info-right {
+        ul {
+            list-style: none;
+            line-height: 1;
+            text-align: center;
+            margin: 0;
+            
+            @if (lightness($tb-quick-info-bg) > 50) {
+                border-top: 1px solid darken($footer-bg, 6%);
+            } @else {
+                border-top: 1px solid lighten($footer-bg, 6%);
+            }
+            
+            li {
+                display: inline-block;
+                
+                a {
+                    color: $tb-quick-info-color;
+                    font-size: rem-calc(14);
+                    padding: (($tb-quick-info-height - rem-calc(25)) / 2) rem-calc(15);
+                    line-height: rem-calc(25);
+                    display: block;
+                    transition: color 0.15s ease;
+                    
+                    &:hover {
+                        color: $tb-quick-info-color-hover;
+                    }
+                }
+            }
+        }
+    }
+}
+
+// ---------------
+// Medium up
+
+@include breakpoint(medium) {
+    .quick-info {
+        .quick-info-left {
+            float: left;
+            
+            ul {
+                text-align: left;
+                margin-left: rem-calc(-15);
+            }
+        }
+        
+        .quick-info-right {
+            float: right;
+            
+            ul {
+                text-align: left;
+                border: none;
+                // offset to right with padding of link
+                margin-right: rem-calc(-15);
+            }
+        }
+    }
+}
+
+// ------------------------------------------------------------------------
+// --- Top Nav ---
+// ------------------------------------------------------------------------
+
+// ---------------
+// Small up
+
+.top-nav {
+    background: $tb-nav-bg;
+    
+    .title-area {
+        float: left;
+        
+        .title {
+            display: inline-block;
+            font-family: $head-font-family;
+            font-style: italic;
+            font-size: rem-calc(24);
+            color: $tb-nav-title-color;
+            line-height: $tb-nav-height;
+            
+            img {
+                height: $tb-nav-logo-height;
+                margin: (($tb-nav-height - $tb-nav-logo-height) / 2) rem-calc(10) (($tb-nav-height - $tb-nav-logo-height) / 2) 0;
+                vertical-align: top;
+            }
+            
+            &.small-logo-only {
+                span {
+                    display: none;
+                }
+            }
+            
+            &.small-text-only {
+                img {
+                    display: none;
+                }
+            }
+        }
+    }
+    
+    .top-nav-toggle {
+        float: right;
+        
+        a {
+            display: block;
+            line-height: $tb-nav-logo-height;
+            padding: rem-calc(0 20);
+            margin: (($tb-nav-height - $tb-nav-logo-height) / 2) rem-calc(-20) (($tb-nav-height - $tb-nav-logo-height) / 2) 0;
+            text-align: center;
+            color: $tb-nav-menu-color;
+            font-size: rem-calc(26);
+        }
+    }
+    
+    .top-nav-right {
+        float: right;
+        width: 100%;
+        padding-bottom: rem-calc(20);
+        display: none;
+        
+        &.active {
+            display: block;
+        }
+        
+        ul {
+            list-style: none;
+            margin: 0;
+            
+            li {
+                display: block;
+                text-align: center;
+                border-top: 1px solid $base-border-color;
+                
+                &:last-child {
+                    border-bottom: 1px solid $base-border-color;
+                }
+                
+                a {
+                    display: block;
+                    margin: 0;
+                    padding: rem-calc(20);
+                    color: $tb-nav-menu-color;
+                    font-size: rem-calc(14);
+                    transition: color 0.15s ease;
+                    
+                    &:hover {
+                        color: $tb-nav-menu-color-hover;
+                    }
+                }
+            }
+        }
+    }
+}
+
+// ---------------
+// Medium up
+
+@include breakpoint(medium) {
+    .top-nav {
+        box-shadow: 0 0 5px rgba(0,0,0,0.25);
+        
+        .title-area {
+            .title {
+                img, span {
+                    display: inline-block;
+                }
+                
+                &.small-logo-only {
+                    span {
+                        display: inline-block;
+                    }
+                }
+
+                &.small-text-only {
+                    img {
+                        display: inline-block;
+                    }
+                }
+            }
+        }
+        
+        .top-nav-toggle {
+            display: none;
+        }
+
+        .top-nav-right {
+            display: block;
+            padding: 0;
+            width: auto;
+            
+            ul {
+                // offset to right with padding of link
+                margin-right: rem-calc(-20);
+                
+                li {
+                    display: inline-block;
+                    border: none;
+                    
+                    &:last-child {
+                        border: none;
+                    }
+                    
+                    a {
+                        line-height: rem-calc(40);
+                        margin: (($tb-nav-height - rem-calc(40)) / 2) 0;
+                        padding: rem-calc(0 20);
+                    }
+                }
+            }
+        }
+    }
+}
+
+// ------------------------------------------------------------------------
+// --- Scrolling Magic (shrink nav on scrolling down) ---
+// ------------------------------------------------------------------------
+
+// ---------------
+// Small up
+
+.nav-spaceholder {
+    display: none;
+}
+
+// ---------------
+// Large up
+
+@include breakpoint(xlarge) {
+    .nav-spaceholder {
+        display: block;
+        height: $tb-quick-info-height + $tb-nav-height;
+    }
+    
+    .nav-container {
+        position: fixed;
+        width: 100%;
+        z-index: 100;
+        top: 0;
+        
+        .quick-info {
+            position: absolute;
+            top: 0;
+            width: 100%;
+            z-index: 101;
+            transition: transform 0.5s ease;
+        }
+        
+        .top-nav {
+            position: absolute;
+            top: $tb-quick-info-height;
+            width: 100%;
+            z-index: 102;
+            transition: transform 0.5s ease;
+            
+            .title-area {
+                .title {
+                    transition: all 0.5s ease;
+
+                    img {
+                        transition: all 0.5s ease;
+                    }
+                }
+            }
+
+            .top-nav-right {
+                ul {
+                    li {
+                        a {
+                            transition: all 0.5s ease;
+                        }
+                    }
+                }
+            }
+        }
+        
+        &.not-top {
+            $n: $tb-nav-height-scroll;
+            $l: $tb-nav-logo-height-scroll;
+            
+            .quick-info {
+                transform: translate(0, -($tb-quick-info-height / 2));
+            }
+
+            .top-nav {
+                transform: translate(0, -$tb-quick-info-height);
+                
+                .title-area {
+                    .title {
+                        font-size: rem-calc(20);
+                        line-height: $n;
+
+                        img {
+                            height: $l;
+                            margin: (($n - $l) / 2) rem-calc(10) (($n - $l) / 2) 0;
+                        }
+                    }
+                }
+
+                .top-nav-right {
+                    ul {
+                        li {
+                            a {
+                                line-height: rem-calc(40);
+                                margin: (($n - rem-calc(40)) / 2) 0;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
